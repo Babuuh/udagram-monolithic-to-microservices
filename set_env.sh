@@ -1,9 +1,0 @@
-export POSTGRES_USERNAME=kihara
-export POSTGRES_PASSWORD=jkn+1298
-export POSTGRES_HOST=udagram-dev-db.ctarpplxbzgk.us-east-1.rds.amazonaws.com
-export POSTGRES_DB=udagramdb
-export AWS_BUCKET=arn:aws:s3:::udagram-kihara
-export AWS_REGION=us-east-1
-export AWS_PROFILE=default
-export JWT_SECRET=testing
-export URL=http://localhost:81
