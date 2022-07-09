@@ -18,7 +18,14 @@ spec:
       containers:
       - image: babuuh/udagram-api-user
         name: udagram-api-user
-        imagePullPolicy: Always          
+        imagePullPolicy: Always   
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"        
         env:
           - name: POSTGRES_USERNAME
             valueFrom:
@@ -33,7 +40,7 @@ spec:
           - name: POSTGRES_DB
             value: udagramdb
           - name: POSTGRES_HOST
-            value: udagram-dev-db.ctarpplxbzgk.us-east-1.rds.amazonaws.com
+            value: udagramdb.ck6ephfnph3g.us-east-1.rds.amazonaws.com
           - name: JWT_SECRET
             valueFrom:
               secretKeyRef:

@@ -18,7 +18,14 @@ spec:
       containers:
       - image: babuuh/udagram-api-feed
         name: udagram-api-feed
-        imagePullPolicy: Always          
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"         
         env:
           - name: POSTGRES_USERNAME
             valueFrom:
@@ -38,13 +45,13 @@ spec:
           - name: POSTGRES_DB
             value: udagramdb
           - name: POSTGRES_HOST
-            value: udagram-dev-db.ctarpplxbzgk.us-east-1.rds.amazonaws.com
+            value: udagramdb.ck6ephfnph3g.us-east-1.rds.amazonaws.com
           - name: AWS_REGION
             value: us-east-1
           - name: AWS_PROFILE
             value: default
           - name: AWS_BUCKET
-            value: udagram-kihara
+            value: udagramkihara-s3
         ports:
         - containerPort: 8080
         volumeMounts:
