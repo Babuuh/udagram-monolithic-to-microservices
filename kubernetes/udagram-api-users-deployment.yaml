@@ -20,11 +20,11 @@ spec:
         name: udagram-api-user
         imagePullPolicy: Always   
         resources:
-          requests:
-            memory: "1Gi"
+            requests:
+            memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "1Gi"
+            memory: "2048Mi"
             cpu: "500m"        
         env:
           - name: POSTGRES_USERNAME
